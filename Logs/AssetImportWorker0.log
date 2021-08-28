@@ -2878,3 +2878,20 @@ System memory in use after: 90.6 MB.
 Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 2569.
 Total: 2.188700 ms (FindLiveObjects: 0.185500 ms CreateObjectMapping: 0.066300 ms MarkObjects: 1.613000 ms  DeleteObjects: 0.323100 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 4823.572260 seconds.
+  path: Assets/Rapid Prototype/Scenes/Main Menu.unity
+  artifactKey: Guid(04d31a548c4e8fb46a8ea673ad49c4a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rapid Prototype/Scenes/Main Menu.unity using Guid(04d31a548c4e8fb46a8ea673ad49c4a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '303652bda2d3a66d64c3727a688feb5a') in 0.008805 seconds
+  Import took 0.022027 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.461685 seconds.
+  path: Assets/Rapid Prototype/Prefabs/Extra Bullet Pickup.prefab
+  artifactKey: Guid(bac397a33a5e08543b7e6f638e6038c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rapid Prototype/Prefabs/Extra Bullet Pickup.prefab using Guid(bac397a33a5e08543b7e6f638e6038c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f52c4cf9681dddfb982697d4d124b2a') in 0.060040 seconds
+  Import took 0.063560 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
