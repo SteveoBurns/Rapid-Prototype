@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("Player Object")]
     public Player player;
     [SerializeField] private GameObject explosion;
+    private SpriteRenderer rend;
 
     [Header("Score Variables")]
     public int score = 0;
@@ -29,6 +30,14 @@ public class GameManager : MonoBehaviour
     [SerializeField, TextArea] private string diedText;
     [SerializeField, TextArea] private string winText;
 
+    [Header("Audio Elements")] 
+    public AudioSource explosionSFX;
+    public AudioSource pickupSFX;
+    public AudioSource deathSFX;
+    public AudioSource lazerSFX;
+
+    private bool isPlayerDead = false;
+
 
     public List<GameObject> activeAsteroids = new List<GameObject>();
 
@@ -39,6 +48,8 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         else
             theManager = this;
+
+        rend = player.GetComponentInChildren<SpriteRenderer>();
     }
 
     /// <summary>
@@ -71,7 +82,6 @@ public class GameManager : MonoBehaviour
     /// <param name="_asteroid">The asteroid that was hit</param>
     public void AsteroidDestroy(Asteroid _asteroid)
     {
-        //todo play explosion and sfx
         score += scorePerAsteroid;
         Explosion(_asteroid.transform);
         
@@ -85,6 +95,8 @@ public class GameManager : MonoBehaviour
     {
         explosion.transform.position = _transform.position;
         explosion.SetActive(true);
+        //Play Explosion SFX
+        explosionSFX.Play();
         Invoke(nameof(HideExplosion),0.3f);
     }
     /// <summary>
@@ -100,11 +112,19 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PlayerDied()
     {
-        Explosion(player.transform);
+        // Play Died SFX
+        if(!isPlayerDead)
+        {
+            deathSFX.Play();
+            isPlayerDead = true;
+            Explosion(player.transform);
+            rend.enabled = false;
+        }
         PopUpPanel(diedText);
         Debug.Log("Player Died");
     }
 
+    
     /// <summary>
     /// Runs when the win condition is true
     /// </summary>

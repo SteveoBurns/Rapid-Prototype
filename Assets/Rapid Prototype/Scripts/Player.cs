@@ -63,6 +63,7 @@ public class Player : MonoBehaviour
     {
         Bullet bullet = Instantiate(bulletPrefab,firePoint.position, transform.rotation);
         bullet.Project(transform.up);
+        GameManager.theManager.lazerSFX.Play();
         Debug.Log("shoot");
     }
     /// <summary>
@@ -74,6 +75,7 @@ public class Player : MonoBehaviour
         Bullet bullet2 = Instantiate(bulletPrefab,firePoint2.position, transform.rotation);
         bullet1.Project(transform.up);
         bullet2.Project(transform.up);
+        GameManager.theManager.lazerSFX.Play();
         Debug.Log("shoot2");
     }
 

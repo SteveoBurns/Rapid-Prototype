@@ -18,6 +18,7 @@ public class PowerUp : MonoBehaviour
         {
             Player player = other.GetComponent<Player>();
             player.extraBullet = true;
+            GameManager.theManager.pickupSFX.Play();
             Destroy(this.gameObject);
         }
     }
