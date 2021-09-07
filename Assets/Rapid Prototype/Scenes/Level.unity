@@ -1080,6 +1080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 597824325083338089, guid: caa38e95f350e1e4998143942c018217, type: 3}
   extraBulletPrefab: {fileID: 0}
+  healthPrefab: {fileID: 0}
   spawnRate: 0.3
   canSpawnPowerUps: 0
   timeTillPickup: 5
@@ -3456,6 +3457,8 @@ MonoBehaviour:
   winText: 'Congrats!
 
     You made it out of the asteroid field.'
+  resumeButton: {fileID: 0}
+  canResume: 0
   explosionSFX: {fileID: 529222935}
   pickupSFX: {fileID: 1787079214}
   deathSFX: {fileID: 1365408264}
@@ -3952,6 +3955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 597824325083338089, guid: caa38e95f350e1e4998143942c018217, type: 3}
   extraBulletPrefab: {fileID: 4833923720555672453, guid: bac397a33a5e08543b7e6f638e6038c7, type: 3}
+  healthPrefab: {fileID: 6114256606942058380, guid: 092b9f7991907ae41901c98b8897148c, type: 3}
   spawnRate: 0.3
   canSpawnPowerUps: 1
   timeTillPickup: 10

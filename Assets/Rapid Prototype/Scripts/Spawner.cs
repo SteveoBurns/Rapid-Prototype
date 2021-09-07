@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject asteroidPrefab;
     public GameObject extraBulletPrefab = null;
+    public GameObject healthPrefab = null;
     [Header("Spawn Rate in seconds")]public float spawnRate = 2;
 
     [SerializeField] private bool canSpawnPowerUps = false;
@@ -26,6 +27,8 @@ public class Spawner : MonoBehaviour
     {
         InvokeRepeating(nameof(Spawn),spawnRate,spawnRate);
         newTime = 0;
+        if(canSpawnPowerUps)
+            InvokeRepeating(nameof(HealthPickup), 40,40);
 
     }
 
@@ -48,6 +51,12 @@ public class Spawner : MonoBehaviour
                 secondPickUp = false;
             }
         }
+    }
+
+    private void HealthPickup()
+    {
+        Debug.Log("Spawned Health Pickup");
+        SpawnPowerUp(healthPrefab);
     }
 
     private void SpawnPowerUp(GameObject _powerUp)

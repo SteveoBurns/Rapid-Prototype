@@ -6,6 +6,9 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     private float speed = 5;
+    [SerializeField] private bool extraBulletPickup = false;
+    [SerializeField] private bool healthPickup = false;
+    
     // Update is called once per frame
     void Update()
     {
@@ -17,9 +20,17 @@ public class PowerUp : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Player player = other.GetComponent<Player>();
-            player.extraBullet = true;
             GameManager.theManager.pickupSFX.Play();
             Destroy(this.gameObject);
+            if(extraBulletPickup)
+            {
+                player.extraBullet = true;
+            }
+
+            if(healthPickup)
+            {
+                player.currentHealth += 25;
+            }
         }
     }
 }
