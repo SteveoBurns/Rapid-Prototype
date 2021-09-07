@@ -38,12 +38,20 @@ public class Menu : MonoBehaviour
             musicVolumeSlider.value = volume;
             VolumeSlider(volume);
         }
+        else
+        {
+            VolumeSlider(0.5f);
+        }
 
         if(PlayerPrefs.HasKey("SFXVolume"))
         {
             float sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
             sfxVolumeSlider.value = sfxVolume;
             SFXSlider(sfxVolume);
+        }
+        else
+        {
+            SFXSlider(0.5f);
         }
     }
     
@@ -57,7 +65,7 @@ public class Menu : MonoBehaviour
     {
         PlayerPrefs.SetFloat("MusicVolume", _volume);
         _volume = VolumeRemap(_volume);
-        audioMixer.SetFloat("MusicGroup", _volume);
+        audioMixer.SetFloat("MusicGroup", _volume);        
     }
 
     /// <summary>
@@ -87,17 +95,16 @@ public class Menu : MonoBehaviour
     /// </summary>
     public void Pause()
     {
-        if(!isPaused)
-        {
-            GameManager.theManager.PopUpPanel("Pause");
-            isPaused = true;
-        }
-        else if(isPaused)
-        {
-            GameManager.theManager.PopUp.SetActive(false);
-            Time.timeScale = 1;
-            isPaused = false;
-        }
+        GameManager.theManager.PopUpPanel("Pause");
+    }
+
+    /// <summary>
+    /// Handles the resume functionality for the resume button.
+    /// </summary>
+    public void Resume()
+    {
+        GameManager.theManager.PopUp.SetActive(false);
+        CharacterMotor.paused = false;
     }
     
     /// <summary>

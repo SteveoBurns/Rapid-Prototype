@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public AudioSource pickupSFX;
     public AudioSource deathSFX;
     public AudioSource lazerSFX;
+    public AudioSource hitSFX;
 
     private bool isPlayerDead = false;
 
@@ -60,7 +61,9 @@ public class GameManager : MonoBehaviour
     {
         PopUp.SetActive(true);
         popupText.text = _text;
-        Time.timeScale = 0;
+        CharacterMotor.paused = true;
+        
+        
     }
 
     /// <summary>
@@ -138,7 +141,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+       
     }
 
     // Update is called once per frame

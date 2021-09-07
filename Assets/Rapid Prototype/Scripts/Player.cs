@@ -53,6 +53,8 @@ public class Player : MonoBehaviour
         if(other.collider.CompareTag("Asteroid"))
         {
             currentHealth -= 25;
+            GameManager.theManager.hitSFX.Play();
+            
         }
     }
 
