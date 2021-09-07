@@ -95,6 +95,7 @@ public class Menu : MonoBehaviour
     /// </summary>
     public void Pause()
     {
+        GameManager.theManager.canResume = true;
         GameManager.theManager.PopUpPanel("Pause");
     }
 
@@ -104,6 +105,7 @@ public class Menu : MonoBehaviour
     public void Resume()
     {
         GameManager.theManager.PopUp.SetActive(false);
+        GameManager.theManager.canResume = false;
         CharacterMotor.paused = false;
     }
     
