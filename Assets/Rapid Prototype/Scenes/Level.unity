@@ -704,7 +704,7 @@ RectTransform:
   m_Children:
   - {fileID: 595259178}
   m_Father: {fileID: 1163358387}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -780,7 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0.91236126, b: 0.4895158, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -913,7 +913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0.5720185, b: 0.5720185, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1839,7 +1839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.57924527, g: 1, b: 0.6086757, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2585,8 +2585,8 @@ RectTransform:
   - {fileID: 1728500747}
   - {fileID: 646184769}
   - {fileID: 309172425}
-  - {fileID: 401648552}
   - {fileID: 298196766}
+  - {fileID: 401648552}
   m_Father: {fileID: 366743306}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2978,7 +2978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  posOffset: 1
+  posOffset: 1.5
 --- !u!114 &1407592546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3457,8 +3457,7 @@ MonoBehaviour:
   winText: 'Congrats!
 
     You made it out of the asteroid field.'
-  resumeButton: {fileID: 0}
-  canResume: 0
+  resumeButton: {fileID: 298196767}
   explosionSFX: {fileID: 529222935}
   pickupSFX: {fileID: 1787079214}
   deathSFX: {fileID: 1365408264}
@@ -4218,7 +4217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 801274472648661157, guid: 86a77c7a56b9ba04f946782c0f97f4cb, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 801274472648661157, guid: 86a77c7a56b9ba04f946782c0f97f4cb, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4298,11 +4297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 801274472648661159, guid: 86a77c7a56b9ba04f946782c0f97f4cb, type: 3}
       propertyPath: m_Color.g
-      value: 0.959904
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 801274472648661159, guid: 86a77c7a56b9ba04f946782c0f97f4cb, type: 3}
       propertyPath: m_Color.r
-      value: 0.71132076
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 801274472648661162, guid: 86a77c7a56b9ba04f946782c0f97f4cb, type: 3}
       propertyPath: m_Name

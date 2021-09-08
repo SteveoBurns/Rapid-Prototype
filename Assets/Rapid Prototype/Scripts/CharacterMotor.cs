@@ -17,6 +17,7 @@ public class CharacterMotor : MonoBehaviour
 
     void Start()
     {
+        paused = false;
         rb = GetComponent<Rigidbody2D>();
     }
 

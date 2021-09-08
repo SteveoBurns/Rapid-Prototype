@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
         InvokeRepeating(nameof(Spawn),spawnRate,spawnRate);
         newTime = 0;
         if(canSpawnPowerUps)
-            InvokeRepeating(nameof(HealthPickup), 40,40);
+            InvokeRepeating(nameof(HealthPickup), 15,20);
 
     }
 

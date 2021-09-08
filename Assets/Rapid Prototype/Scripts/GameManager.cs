@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     [SerializeField, TextArea] private string diedText;
     [SerializeField, TextArea] private string winText;
     [SerializeField] private Button resumeButton;
-    public bool canResume = false;
+    [NonSerialized]public bool canResume = false;
 
     [Header("Audio Elements")] 
     public AudioSource explosionSFX;
@@ -64,7 +64,10 @@ public class GameManager : MonoBehaviour
         PopUp.SetActive(true);
         popupText.text = _text;
         CharacterMotor.paused = true;
-        resumeButton.enabled = canResume;
+        if(canResume)
+            resumeButton.gameObject.SetActive(true);
+        if(!canResume)
+            resumeButton.gameObject.SetActive(false);
         
     }
 
