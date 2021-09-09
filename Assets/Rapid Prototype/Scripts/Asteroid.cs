@@ -5,31 +5,41 @@ using UnityEngine;
 
 using Random = UnityEngine.Random;
 
-public class Asteroid : MonoBehaviour
+namespace AsteroidHell
 {
-    public float speed = 7;
-
-    public float rotate;
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Handles Asteroid Object functionality
+    /// </summary>
+    public class Asteroid : MonoBehaviour
     {
-        rotate = Random.Range(310, 400);
-        transform.Rotate(Vector3.back,rotate);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(Vector3.down*speed*Time.deltaTime);
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if(other.collider.CompareTag("Bullet"))
+        public float speed = 7;
+        public float rotate;
+    
+        // Start is called before the first frame update
+        void Start()
         {
-            GameManager.theManager.AsteroidDestroy(this);
-            Destroy(this.gameObject);
+            rotate = Random.Range(310, 400);
+            transform.Rotate(Vector3.back,rotate);
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            transform.Translate(Vector3.down*speed*Time.deltaTime);
+
+        }
+
+        /// <summary>
+        /// If the asteroid collides with a bullet, destroy the asteroid and call the AsteroidDestroy function from the Game Manager.
+        /// </summary>
+        /// <param name="other"></param>
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if(other.collider.CompareTag("Bullet"))
+            {
+                GameManager.theManager.AsteroidDestroy(this);
+                Destroy(this.gameObject);
+            }
         }
     }
 }

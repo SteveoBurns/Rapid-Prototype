@@ -6,23 +6,28 @@ using Unity.Mathematics;
 
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+namespace AsteroidHell
 {
-
-	public float speed = 5;
-	private Vector3 startPos;
-
-	private void Start()
+	/// <summary>
+	/// Handles the level background repeating.
+	/// </summary>
+	public class LevelManager : MonoBehaviour
 	{
-		startPos = transform.position;
-	}
+		public float speed = 5;
+		private Vector3 startPos;
 
-	private void Update()
-	{
-		transform.Translate(Vector3.down*speed*Time.deltaTime);
-		if(transform.position.y < - 36.44f)
+		private void Start()
 		{
-			transform.position = startPos;
+			startPos = transform.position;
+		}
+
+		private void Update()
+		{
+			transform.Translate(Vector3.down*speed*Time.deltaTime);
+			if(transform.position.y < - 36.44f)
+			{
+				transform.position = startPos;
+			}
 		}
 	}
 }

@@ -2,27 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+namespace AsteroidHell
 {
-    private Rigidbody2D rb;
-       
-    public float speed = 500f;
-    public float maxLifetime = 10f;
-
-    private void Awake()
+    /// <summary>
+    /// Handles the bullet functionality
+    /// </summary>
+    public class Bullet : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody2D>();
-    }
+        private Rigidbody2D rb;
+        private float speed = 500f;
+        private float maxLifetime = 10f;
 
-    public void Project(Vector2 _direction)
-    {
-        rb.AddForce(_direction * this.speed);
+        private void Awake()
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+
+        /// <summary>
+        /// Sets the trajectory of the bullet
+        /// </summary>
+        /// <param name="_direction">Direction of travel for the bullet</param>
+        public void Project(Vector2 _direction)
+        {
+            rb.AddForce(_direction * this.speed);
             
-        Destroy(this.gameObject, maxLifetime);
-    }
+            Destroy(this.gameObject, maxLifetime);
+        }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Destroy(this.gameObject);
+        /// <summary>
+        /// When the bullet hits an object, destroy the bullet.
+        /// </summary>
+        private void OnCollisionEnter2D()
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
